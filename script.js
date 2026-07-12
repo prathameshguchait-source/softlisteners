@@ -1,4 +1,4 @@
-     // softlisteners — site + booking wizard behaviour
+// softlisteners — site + booking wizard behaviour
 // Pure vanilla JS, no build step, no external state beyond the current page load.
 
 (function () {
@@ -272,38 +272,9 @@
     function prepStep4() {
       var upiUrl = buildUpiUrl();
       if (els.upiPayBtn) els.upiPayBtn.setAttribute('href', upiUrl);
-      renderQr(upiUrl);
-    }
-
-    function renderQr(upiUrl) {
-      var wrap = els.upiQr ? els.upiQr.parentElement : null;
-      if (window.QRCode && els.upiQr) {
-        window.QRCode.toCanvas(els.upiQr, upiUrl, {
-          width: 176,
-          margin: 1,
-          color: { dark: '#362F3D', light: '#FFFFFF' }
-        }, function (err) {
-          if (err) {
-            console.error('QR generation failed, using fallback image:', err);
-            showQrFallback(upiUrl, wrap);
-          }
-        });
-      } else {
-        // library didn't load (CDN blocked, offline, etc.) — use an image-based fallback
-        showQrFallback(upiUrl, wrap);
+      if (els.upiQr) {
+        els.upiQr.src = 'https://api.qrserver.com/v1/create-qr-code/?size=176x176&data=' + encodeURIComponent(upiUrl);
       }
-    }
-
-    function showQrFallback(upiUrl, wrap) {
-      if (!wrap) return;
-      var img = document.createElement('img');
-      img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=176x176&data=' + encodeURIComponent(upiUrl);
-      img.alt = 'UPI payment QR code';
-      img.className = 'upi-qr';
-      img.width = 176;
-      img.height = 176;
-      wrap.innerHTML = '';
-      wrap.appendChild(img);
     }
 
     if (els.upiCopyBtn) {
@@ -478,4 +449,5 @@
     }
   }
 })();
+           
       
