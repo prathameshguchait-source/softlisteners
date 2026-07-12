@@ -11,7 +11,7 @@
 <meta name="author" content="softlisteners">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#8C6FB0">
-<link rel="canonical" href="https://www.softlisteners.com/">
+<link rel="canonical" href="https://softlisteners.prathameshpraveshguchait.workers.dev/">
 
 <!-- Favicon -->
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -20,7 +20,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="softlisteners — Someone to listen, without judgment">
 <meta property="og:description" content="You don't have to carry it all by yourself. Book a confidential, one-on-one listening session — no advice, no judgment, just a calm ear.">
-<meta property="og:url" content="https://www.softlisteners.com/">
+<meta property="og:url" content="https://softlisteners.prathameshpraveshguchait.workers.dev/">
 <meta property="og:site_name" content="softlisteners">
 <meta property="og:locale" content="en_IN">
 
@@ -344,7 +344,8 @@
           <div class="upi-box">
             <p>Scan to pay, or tap the button below on your phone</p>
             <div class="upi-qr-wrap">
-              <canvas id="upiQr" class="upi-qr" width="176" height="176" aria-label="UPI payment QR code"></canvas>
+              <img id="upiQr" class="upi-qr" width="176" height="176" alt="UPI payment QR code"
+                   src="https://api.qrserver.com/v1/create-qr-code/?size=176x176&amp;data=upi%3A%2F%2Fpay%3Fpa%3D8446913797%2540slc%26pn%3Dsoftlisteners">
             </div>
             <div class="upi-id" id="upiIdText">8446913797@slc</div>
             <button type="button" id="upiCopyBtn" class="upi-copy-btn">Copy UPI ID</button>
@@ -356,161 +357,4 @@
             </ol>
             <p>Enter your transaction ID below once payment is complete.</p>
           </div>
-          <p class="secure-note"><span aria-hidden="true">🔒</span> Your details are used only to confirm and connect this session — never sold or shared.</p>
-
-          <form id="detailsForm">
-            <div class="field-grid">
-              <div class="field">
-                <label for="bName">Full name</label>
-                <input type="text" id="bName" required placeholder="Your name">
-              </div>
-              <div class="field">
-                <label for="bEmail">Email</label>
-                <input type="email" id="bEmail" required placeholder="you@example.com">
-              </div>
-            </div>
-            <div class="field-grid">
-              <div class="field">
-                <label for="bPhone">Phone number</label>
-                <input type="tel" id="bPhone" required placeholder="10-digit mobile number">
-              </div>
-              <div class="field">
-                <label for="bUpi">UPI transaction ID</label>
-                <input type="text" id="bUpi" required placeholder="After completing payment">
-              </div>
-            </div>
-            <div class="field">
-              <label for="bNotes">Anything you'd like us to know? (optional)</label>
-              <textarea id="bNotes" rows="3" placeholder="Not required — only if it helps"></textarea>
-            </div>
-
-            <div class="summary-card" id="reviewCard" hidden>
-              <div class="summary-row"><span>Name</span><span id="revName"></span></div>
-              <div class="summary-row"><span>Session</span><span id="revDuration"></span></div>
-              <div class="summary-row"><span>Date</span><span id="revDate"></span></div>
-              <div class="summary-row"><span>Time</span><span id="revTime"></span></div>
-              <div class="summary-row"><span>Amount paid</span><span id="revAmount"></span></div>
-              <div class="summary-row"><span>UPI transaction ID</span><span id="revUpi"></span></div>
-              <button type="button" id="editReviewBtn" class="upi-copy-btn" style="margin-top:14px;">Edit details</button>
-            </div>
-
-            <div class="panel-actions">
-              <button type="button" id="backTo3" class="btn btn-ghost">Back</button>
-              <button type="submit" class="btn btn-primary" id="reviewSubmitBtn">Review booking</button>
-            </div>
-            <div id="detailStatus" class="status-msg"></div>
-          </form>
-        </div>
-
-        <!-- Step 5: confirmation -->
-        <div class="book-panel" data-panel="5">
-          <div class="confirm-screen">
-            <div class="confirm-icon" aria-hidden="true">✓</div>
-            <h3>You're booked, <span id="confirmName">there</span>.</h3>
-            <p class="panel-sub">A confirmation email is on its way to <strong id="confirmEmail"></strong>. Your listener will call you at your chosen time.</p>
-            <div class="summary-card" id="finalSummary"></div>
-            <button type="button" id="restartBooking" class="btn btn-ghost">Book another session</button>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="lookup-card lookup-card-notice">
-        <h4>My bookings</h4>
-        <p class="desc">Booking history will be available in a future update. Save your confirmation email for now — it has everything you need.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="wrap reveal">
-      <span class="eyebrow center" style="display:block;">Questions, answered honestly</span>
-      <h2 class="center">Before you book</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">Is this therapy?<span class="faq-icon">+</span></button>
-          <div class="faq-a-wrap"><p class="faq-a">No. softlisteners is a listening service, not therapy or counselling. We don't diagnose, treat, or give clinical advice — we simply listen. If you need professional mental health support, please reach out to a licensed therapist or counsellor.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">Will you give me advice?<span class="faq-icon">+</span></button>
-          <div class="faq-a-wrap"><p class="faq-a">Not unless you ask for it, and even then, only gently. Our listeners are there to hear you, not to direct your choices or tell you what to do.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">Is our conversation confidential?<span class="faq-icon">+</span></button>
-          <div class="faq-a-wrap"><p class="faq-a">Yes. What you share stays between you and your listener. We don't record calls or share the details of what's discussed.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">Can I stay anonymous?<span class="faq-icon">+</span></button>
-          <div class="faq-a-wrap"><p class="faq-a">You're welcome to share just a first name if that feels more comfortable. We only need a valid phone number and email to confirm your booking and connect the call.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">What happens after booking?<span class="faq-icon">+</span></button>
-          <div class="faq-a-wrap"><p class="faq-a">You'll see an on-screen confirmation and receive a confirmation email with your session details. Your listener will call you at the time you've chosen.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">Can I reschedule?<span class="faq-icon">+</span></button>
-          <div class="faq-a-wrap"><p class="faq-a">Yes. Just let us know a few hours before your session and we'll help you find a new time.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">What if I'm late?<span class="faq-icon">+</span></button>
-          <div class="faq-a-wrap"><p class="faq-a">Your listener will wait for a few minutes past your start time. If you miss the window entirely, just let us know and we'll help you rebook — no judgment there either.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">What languages are available?<span class="faq-icon">+</span></button>
-          <div class="faq-a-wrap"><p class="faq-a">Currently English and Hindi. Let us know your preference in the notes when booking.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">How will I receive the call?<span class="faq-icon">+</span></button>
-          <div class="faq-a-wrap"><p class="faq-a">Your listener calls the phone number you provide, right at your chosen time. Keep your phone nearby and make sure the number you enter at booking is correct.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SAFETY / LEGAL -->
-  <section class="safety safety-prominent reveal" aria-labelledby="safety-heading">
-    <div class="wrap safety-inner">
-      <div class="safety-icon" aria-hidden="true">⚠</div>
-      <div>
-        <h3 id="safety-heading">Important safety note</h3>
-        <p>softlisteners is a listening service. It is <strong>not</strong> therapy, <strong>not</strong> counselling, and <strong>not</strong> crisis support.</p>
-        <p>If you may immediately harm yourself or someone else, or you are in immediate danger, please contact your local emergency services or a qualified crisis helpline right away — not this website.</p>
-        <p>Information you share during booking (name, email, phone number) is used only to schedule and confirm your session, and is never sold or shared with third parties.</p>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap footer-grid">
-    <div class="footer-brand">
-      <div class="logo">softlisteners</div>
-      <p>A quiet space to be heard. Not therapy, not advice — just listening.</p>
-    </div>
-    <nav class="footer-col" aria-label="Site">
-      <h4>Site</h4>
-      <a href="#exists">Why we exist</a>
-      <a href="#session-feel">A session feels like</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#booking">Book a session</a>
-    </nav>
-    <nav class="footer-col" aria-label="Legal">
-      <h4>Legal</h4>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="mailto:softlisteners@gmail.com">Contact us</a>
-    </nav>
-  </div>
-  <div class="footer-bottom">
-    <span>&copy; <span id="copyYear">2026</span> softlisteners. All rights reserved.</span>
-    <span class="footer-disclaimer">Not therapy, counselling, coaching, or medical care.</span>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js" defer></script>
-<script src="script.js" defer></script>
-</body>
-</html>
+          <p class="secure-note"><span aria-hidden="true">🔒</span> Your details are use
